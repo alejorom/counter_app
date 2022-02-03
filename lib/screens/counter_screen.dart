@@ -30,15 +30,38 @@ class _CounterScreenState extends State<CounterScreen> {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.add,
-        ),
-        onPressed: () {
-          counter++;
-          setState(() {}); // Función anónima
-        },
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            child: const Icon(
+              Icons.exposure_minus_1_outlined,
+            ),
+            onPressed: () {
+              counter--;
+              setState(() {}); // Función anónima
+            },
+          ),
+          FloatingActionButton(
+            child: const Icon(
+              Icons.exposure_zero_outlined,
+            ),
+            onPressed: () {
+              counter = 0;
+              setState(() {}); // Función anónima
+            },
+          ),
+          FloatingActionButton(
+            child: const Icon(
+              Icons.exposure_plus_1_outlined,
+            ),
+            onPressed: () {
+              counter++;
+              setState(() {}); // Función anónima
+            },
+          ),
+        ],
       ),
     );
   }
